@@ -23,7 +23,7 @@ app.controller('myCtrl', function ($scope, $http) {
 
 
     /* SHOW CONTENT AFTER 'CREATE' BUTTON IS CLICKED */
-    $scope.show = false;
+    $scope.show = true;
     $scope.newList = function(){
         $scope.show = true;
     }
@@ -49,7 +49,7 @@ app.controller('myCtrl', function ($scope, $http) {
             { field: "description", title: "Description" },
             { field: "start", title: "Start Date" },
             { field: "end", title: "End Date" },
-            { field: "completed", title: "Completed" }
+            { field: "completed", title: "Com pleted" }
         ],
         sortable: true,
         pageable: true

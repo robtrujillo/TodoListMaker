@@ -6,6 +6,7 @@ import com.store.app.domain.ToDoList;
 import com.store.app.service.ToDoListServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class HomeController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String index() {
-        return "Home/index";
+        return "Home/login";
     }
 
 //    @RequestMapping(value = "/userModel", method = RequestMethod.GET)
@@ -32,11 +33,19 @@ public class HomeController {
 //    }
 
     /*
-    * Fake Mapping to test controller from AngularJS http request
+    * Returns main page after login
     * */
-    @RequestMapping(value = "/getMessages", method = RequestMethod.GET)
-    public @ResponseBody ArrayList<ToDoList> getMessages(@ModelAttribute("TodoList") ToDoList tDL){
-        return toDoListService.getToDoListArrayEntity(tDL);
+    @RequestMapping(value = "/loadPage", method = RequestMethod.GET)
+    public String loadPage(ModelMap map){
+        return "Home/index";
+    }
+
+    /*
+    * Returns index page after logout
+    * */
+    @RequestMapping(value = "/loadPage_index", method = RequestMethod.GET)
+    public String loadPage_index(ModelMap map){
+        return "Home/login";
     }
 
 

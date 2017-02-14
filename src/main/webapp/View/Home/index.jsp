@@ -13,6 +13,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+    <%--Google Logout--%>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="322601702877-dbp2h5samt8vp79cas05479a2t7r9tqk.apps.googleusercontent.com">
+    <%--Google Logout End--%>
+    <%--Google Logout--%>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <!-- Bootst<link rel="stylesheet" media="screen" href="<c:url value="/resources/library-vendor/bootstrap/css/bootstrap.min.css" />" >
+rap -->
+
+    <script src="https://apis.google.com/js/api:client.js"></script>
+
+    <script>
+        function signOut() {
+            var auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+//            document.getElementById('name').innerText = "Signed in: " +
+//                googleUser.getBasicProfile().getName();
+                console.log('User signed out.');
+                document.forms["loadPage_index"].submit();
+                alert("Signed Out");
+            }, function(error) {
+                alert(JSON.stringify(error, undefined, 2));
+            });
+        }
+
+        function onLoad() {
+            gapi.load('auth2', function() {
+                gapi.auth2.init();
+            });
+        }
+    </script>
+    <%--Google Logout End--%>
 
 
     <title>TODO LIST MAKER</title>
@@ -23,7 +57,7 @@
     <!--App Content START-->
     <div class="app-wrapper">
         <div id="toolbar">
-
+            <span>
             <button ng-click="newList()"  type="button" class="btn btn-success" data-toggle="tooltip" title="Create" data-placement="bottom">
                 <span class="glyphicon glyphicon-plus-sign"></span>
             </button>
@@ -36,9 +70,19 @@
                 <span class="glyphicon glyphicon-floppy-disk"></span>
             </button>
 
-            <button ng-click="logout()" type="submit" class="btn btn-default" data-toggle="tooltip" title="Logout" data-placement="bottom">
-                <span class="glyphicon glyphicon-log-out"></span>
-            </button>
+            <form:form id="loadPage_index" name="loadPage_index" method="GET" action="/loadPage_index">
+                <button class="btn-hide" type="submit"></button>
+            </form:form>
+
+            <form:form method="GET" action="/logout">
+                <a href="https://accounts.google.com/logout">
+                    <button onclick="signOut()" type="submit" class="btn btn-default" data-toggle="tooltip" title="Sign out" data-placement="bottom">
+                            <%--<a href="https://accounts.google.com/logout" onclick="signOut();">--%>
+                        <span class="glyphicon glyphicon-log-out"></span>
+                    </button>
+                </a>
+            </form:form>
+            </span>
 
         </div>
 
