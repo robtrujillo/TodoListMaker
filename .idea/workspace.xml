@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f51d5af-4302-41ec-9ee3-0501e2d32501" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/controller/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/domain/Item.class" afterPath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/domain/Item.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/domain/ToDoList.class" afterPath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/domain/ToDoList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/service/ToDoListServiceImplementation.class" afterPath="$PROJECT_DIR$/target/DoListMakerWeb/WEB-INF/classes/com/store/app/service/ToDoListServiceImplementation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/store/app/controller/HomeController.class" afterPath="$PROJECT_DIR$/target/classes/com/store/app/controller/HomeController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/store/app/domain/Item.class" afterPath="$PROJECT_DIR$/target/classes/com/store/app/domain/Item.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/store/app/domain/ToDoList.class" afterPath="$PROJECT_DIR$/target/classes/com/store/app/domain/ToDoList.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/store/app/service/ToDoListServiceImplementation.class" afterPath="$PROJECT_DIR$/target/classes/com/store/app/service/ToDoListServiceImplementation.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/store/app/controller/HomeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/store/app/controller/HomeController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/View/Home/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/View/Home/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/app/css/todolist_maker.css" afterPath="$PROJECT_DIR$/src/main/webapp/resources/app/css/todolist_maker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/DoListMakerWeb/resources/app/css/todolist_maker.css" afterPath="$PROJECT_DIR$/target/DoListMakerWeb/resources/app/css/todolist_maker.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,18 +33,18 @@
       <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/store/app/controller/HomeController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
+            <state relative-caret-position="-391">
               <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ang_test.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ang_test.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-408">
-              <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+            <state relative-caret-position="300">
+              <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -65,8 +55,8 @@
       <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/View/Home/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="-675">
+              <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -74,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="todolist_maker.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="todolist_maker.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/app/css/todolist_maker.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
@@ -132,12 +122,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/store/app/model/Item.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/app/model/TodoListModel.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/View/Home/todolist_maker.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/app/service/ToDoListServiceInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/store/app/controller/HomeController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/View/Home/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/app/css/todolist_maker.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/View/Home/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js" />
       </list>
     </option>
   </component>
@@ -943,16 +933,16 @@
       <workItem from="1486873387329" duration="13943000" />
       <workItem from="1486919236984" duration="9840000" />
       <workItem from="1487007697556" duration="9757000" />
-      <workItem from="1487028904365" duration="6994000" />
+      <workItem from="1487028904365" duration="9947000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40534000" />
+    <option name="totallyTimeSpent" value="43487000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-10" y="0" width="1933" height="1030" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -977,7 +967,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298611" sideWeight="0.49188906" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25013083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25013083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1278,19 +1268,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/app/css/todolist_maker.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="12" column="30" lean-forward="true" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/store/app/controller/HomeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
+        <state relative-caret-position="-391">
           <caret line="79" column="8" lean-forward="true" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
           <folding />
         </state>
@@ -1298,19 +1286,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/View/Home/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="28" column="24" lean-forward="false" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="-675">
+          <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/app/css/todolist_maker.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/app/js/ang_test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

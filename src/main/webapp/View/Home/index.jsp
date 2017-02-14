@@ -2,7 +2,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
 <%@ page contentType="text/html;charset=UTF-8"  %>
 
 <!-- ADDED BY ROBERT FROM CLANS -->
@@ -14,10 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="<c:url value="/resources/app/css/todolist_maker.css" />">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
     <title>TODO LIST MAKER</title>
 
@@ -102,92 +98,35 @@
     </div>
     <!--App Content END--
 
-    <!-- Modal New Category -->
-    <div class="modal fade" id="new-category-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <form role="form" id="category-add-form" action="#" method="post" accept-charset="utf-8">
-
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title">New Category</h4>
-                    </div>
-
-                    <div class="modal-body">
-
-                        <!-- Mensajes post ajax request -->
-                        <div class="alert alert-success alert-dismissible" style="display: none;" role="alert">
-                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            You have registered the category!
-                        </div>
-                        <div class="alert alert-danger alert-dismissible" style="display: none;" role="alert">
-                            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                            An error has occurred, try again or you can also try reloading the page if the error persists!
-                        </div>
-
-                        <div class="form-group">
-                            <label for="category-name"><span class="glyphicon glyphicon-folder-close"></span> Name</label>
-                            <input type="text" class="form-control" id="category-name" name="category-name" placeholder="Eje: Laptops">
-                            <span class="help-block" style="display: none;">Requerido</span>
-                        </div>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Send</button>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- JavaScripts -->
+    <!-- CSS START -->
     <section>
+        <link rel="stylesheet" href="<c:url value="/resources/app/css/todolist_maker.css" />">
 
-        <!-- jQuery Core -->
-        <script src="<c:url value="/resources/library-vendor/jquery/jquery-2.0.3.min.js" />"></script>
-
-        <!-- jQuery Validation -->
-        <script src="<c:url value="/resources/library-vendor/jquery/validation/jquery.validate.min.js" />"  type="text/javascript" ></script>
-
-        <!-- jQuery Validation Additional Methods -->
-        <script src="<c:url value="/resources/library-vendor/jquery/validation/additional-methods.min.js" />"  type="text/javascript" ></script>
-
-        <!-- Bootstrap -->
-        <script src="<c:url value="/resources/library-vendor/bootstrap/js/bootstrap.min.js" />" type="text/javascript"></script>
-
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries, (https://github.com/scottjehl/Respond), (https://code.google.com/p/html5shiv/) -->
-        <script src="<c:url value="/resources/library-vendor/respond/respond.min.js" />" type="text/javascript"></script>
-        <script src="<c:url value="/resources/library-vendor/html5shiv/html5shiv.js" />" type="text/javascript"></script>
-
-        <!-- Google Code Prettify -->
-        <script src="<c:url value="/resources/library-vendor/google-code-prettify/prettify.js" />" type="text/javascript"></script>
-
-        <!-- jqTree  -->
-        <script src="<c:url value="/resources/library-vendor/jqTree-master/tree.jquery.js" />"  type="text/javascript" ></script>
-
-        <!-- Cookie Jquery  -->
-        <script src="<c:url value="/resources/library-vendor/jquery-cookie-master/jquery.cookie.js" />"  type="text/javascript" ></script>
-
-        <!-- Pnotify - pinesframework  -->
-        <script src="<c:url value="/resources/library-vendor/pnotify/pnotify.custom.min.js" />"  type="text/javascript" ></script>
-
-        <!-- App Base -->
-
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-        <script src="<c:url value="/resources/app/js/ang_test.js" />"  type="text/javascript" ></script>
-
-        <!-- App -->
-
-
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!--KENDO UI -->
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.118/styles/kendo.common-material.min.css" />
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.118/styles/kendo.material.min.css" />
         <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2017.1.118/styles/kendo.material.mobile.min.css" />
+
+    </section>
+    <!-- CSS END -->
+
+    <!-- JavaScripts -->
+    <section>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Google Code Prettify -->
+        <script src="<c:url value="/resources/library-vendor/google-code-prettify/prettify.js" />" type="text/javascript"></script>
+
+        <!-- App Base -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="<c:url value="/resources/app/js/ang_test.js" />"  type="text/javascript" ></script>
+
+        <!--KENDO UI -->
         <!-- THE FOLLOWING SCRIPT (KENDO) REQUIRES JQUERY & ANGULARJS-->
         <!--<script src="https://kendo.cdn.telerik.com/2017.1.118/js/jquery.min.js"></script>-->
         <!--<script src="https://kendo.cdn.telerik.com/2017.1.118/js/angular.min.js"></script>-->
