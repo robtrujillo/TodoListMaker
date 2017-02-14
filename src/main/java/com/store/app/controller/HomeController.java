@@ -80,6 +80,7 @@ public class HomeController {
     * */
     @RequestMapping(value = "/addList", method = RequestMethod.GET)
     public @ResponseBody boolean addList(@ModelAttribute("TodoListModel") ToDoList list){
+        int x=1;
         return toDoListService.saveDoListEntity(list.getEmail(), list.getPrivate(), list.getListName(), list.getID());
     }
 

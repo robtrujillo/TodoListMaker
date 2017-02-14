@@ -1,3 +1,18 @@
 span.glyphicon {
     font-size: 20px;
 }
+
+.app-wrapper {
+    padding-left: 2cm;
+    padding-top: 1cm;
+    padding-right: 2cm;
+    padding-bottom: 1cm;
+}
+
+#toolbar{
+    padding-bottom: 7px;
+}
+
+#details{
+    width: 30%;
+}

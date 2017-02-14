@@ -27,9 +27,7 @@
     <!--App Content START-->
     <div class="app-wrapper">
         <div id="toolbar">
-            <!--<input ng-click="newList()" type="submit" class="btn btn-success btn-lg" data-toggle="tooltip" title="Create" >-->
-            <!--<span class="glyphicon glyphicon-plus-sign"></span>-->
-            <!--</input>-->
+
             <button ng-click="newList()"  type="button" class="btn btn-success" data-toggle="tooltip" title="Create" data-placement="bottom">
                 <span class="glyphicon glyphicon-plus-sign"></span>
             </button>
