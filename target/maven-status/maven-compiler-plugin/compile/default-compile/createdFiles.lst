@@ -1,0 +1,7 @@
+com\store\app\domain\Item.class
+com\store\app\domain\ToDoList.class
+com\store\app\service\ToDoListServiceInterface.class
+com\store\app\controller\HomeController.class
+com\store\app\service\DatastoreServiceFactoryInterface.class
+com\store\app\service\DatastoreServiceFactoryImplementation.class
+com\store\app\service\ToDoListServiceImplementation.class
