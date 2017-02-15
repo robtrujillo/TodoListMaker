@@ -5,4 +5,5 @@
   <li>Rob Trujillo</li>
   <li>Susan Lin</li>
   <li>Chuntak Kong</li>
+  <li>Calvin Kwok</li>
 </ul>                        
