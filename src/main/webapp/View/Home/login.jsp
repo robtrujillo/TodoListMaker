@@ -1,9 +1,9 @@
 <!--
-  Created by IntelliJ IDEA.
-  User: rvtru
-  Date: 2/14/2017
-  Time: 1:58 PM
-  To change this template use File | Settings | File Templates.
+Created by IntelliJ IDEA.
+User: rvtru
+Date: 2/14/2017
+Time: 1:58 PM
+To change this template use File | Settings | File Templates.
 -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -66,6 +66,8 @@
                 function(googleUser) {
                     var userName = googleUser.getBasicProfile().getName();
                     var userEmail = googleUser.getBasicProfile().getEmail();
+                    sessionStorage.setItem("userName", userName);
+                    sessionStorage.setItem("email", userEmail);
                     document.forms["loadPage"].submit();
                 }, function(error) {
                     alert(JSON.stringify(error, undefined, 2));
@@ -74,9 +76,11 @@
     </script>
 
 </head>
-<body>
+<body class="page-wrapper">
 
 <div>
+    <h1>Welcome to the Todo List Maker!</h1>
+    <p>The most immersive todo list maker of this century!</p>
     <form:form id="loadPage" name="loadPage" method="GET" action="/loadPage">
         <button hidden="hidden" class="btn btn-signout btn-warning" type="submit"></button>
     </form:form>
@@ -86,7 +90,7 @@
         <div id="login_ID">
             <div id="gSignInWrapper">
                 <div id="customBtn" class="customGPlusSignIn">
-                    <button type="button" class = "btn btn-danger">Sign In</button>
+                    <button type="button" class = "btn btn-google">Sign in with Google</button>
                 </div>
             </div>
         </div>
@@ -96,6 +100,7 @@
     </form:form>
 </div>
 
+<link rel="stylesheet" href="<c:url value="/resources/app/css/login.css" />">
 
 <!-- JavaScripts -->
 <section>

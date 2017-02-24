@@ -22,7 +22,7 @@ public class Item {
 
     /*THIS ASSIGNES A UNIT NUMERIC ID AND INITIALIZES AN ENTITY FOR ITEMS*/
     private Entity entity = new Entity(ITEM_ENTITY);
-    public Item(){entity.setProperty(ID, entity.getKey().getId());};
+    public Item(){};
 
     public Item(Entity e) { entity = e; }
 

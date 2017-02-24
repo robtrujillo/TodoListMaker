@@ -55,6 +55,7 @@ rap -->
 <body ng-app="myApp" ng-controller="myCtrl">
 
     <!--App Content START-->
+    <h1><span class="label label-default">Welcome {{userName}}</span></h1>
     <div class="app-wrapper">
         <div id="toolbar">
             <span>
@@ -62,11 +63,11 @@ rap -->
                 <span class="glyphicon glyphicon-plus-sign"></span>
             </button>
 
-            <button ng-click="loadList()" type="button" class="btn btn-default" data-toggle="tooltip" title="Load" data-placement="bottom">
+            <button ng-click="loadListBTN()" type="button" class="btn btn-default" data-toggle="tooltip" title="Load" data-placement="bottom">
                 <span class="glyphicon glyphicon-folder-open"></span>
             </button>
 
-            <button ng-disabled="!listForm.$dirty" type="button" class="btn btn-primary" data-toggle="tooltip" title="Save" data-placement="bottom">
+            <button ng-click="save()" ng-disabled="notsaveable" type="button" class="btn btn-primary" data-toggle="tooltip" title="Save" data-placement="bottom">
                 <span class="glyphicon glyphicon-floppy-disk"></span>
             </button>
 
@@ -90,51 +91,43 @@ rap -->
             <h1>To Do List</h1>
         </div>
 
+        <select ng-disabled="newListMode" ng-change="onListSelected()" ng-model="selectedList" ng-options="toDoList.listName for toDoList in toDoListList"></select>
+        <label>
+            <input type="radio" ng-disabled="newListMode" ng-click="loadLists()" ng-model="viewMyList" value=true>
+            View My Lists
+        </label>
+        <label>
+            <input type="radio" ng-disabled="newListMode" ng-click="loadLists()" ng-model="viewMyList" value=false>
+            View Other Lists
+        </label>
+
+
         <div id="details" ng-show="show">
-            <h2>Details</h2>
-            <br/>
-            <div class="form-group">
-                <form name="listForm">
-                    <label for="nameOfList">Name of List:</label>
-                    <input type="text" class="form-control" id="nameOfList" ng-model="nameOfList">
-                </form>
-            </div>
-            <div class="form-group">
-                <label for="author">Author:</label>
-                <input type="text" class="form-control" id="author">
-            </div>
+            <form name="listForm">
+                <h2>Details</h2>
+                <br/>
+                <div class="form-group">
+
+                        <label for="nameOfList">Name of List:</label>
+                        <input type="text" class="form-control" id="nameOfList" ng-model="nameOfList">
+
+                </div>
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" readonly="true" class="form-control" id="author" ng-model="ownerOfList">
+                    <label>Private:
+                        <input type="checkbox" ng-model="private"
+                               ng-true-value="true" ng-false-value="false">
+                    </label><br/>
+                </div>
+
+            </form>
         </div>
 
         <div id="items" ng-show="show">
             <h3>Items</h3>
-            <span id="item-btns">
 
-                <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-plus-sign">
-                <a href="#" data-toggle="tooltip" title="Create">Add Item</a>
-            </span>
-            </button>
-
-
-            <button type="button" class="btn btn-default">
-                <a href="#" data-toggle="tooltip" title="Save">Delete Item</a>
-                <span class="glyphicon glyphicon-minus-sign"></span>
-            </button>
-
-            <button type="button" class="btn btn-default">
-                <span class="glyphicons glyphicons-circle-arrow-top">
-                    <a href="#" data-toggle="tooltip" title="Save">Move Item Up</a>
-                </span>
-            </button>
-
-            <button type="button" class="btn btn-default">
-                <span class="glyphicons glyphicons-circle-arrow-down">
-                    <a href="#" data-toggle="tooltip" title="Save">Move Item Down</a>
-                </span>
-            </button>
-            </span>
-
-            <kendo-grid options="mainGridOptions">
+            <kendo-grid id="grid" options="mainGridOptions">
 
             </kendo-grid>
 

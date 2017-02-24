@@ -23,22 +23,23 @@ public class ToDoListServiceImplementation implements ToDoListServiceInterface {
         this.datastoreService = datastoreServiceFactory.getDatastoreService();
     }
 
-
-    public boolean saveItemEntity(final long listId, final String category, final String description,
+    public Entity saveItemEntity(final long listId, final String category, final String description,
                                   final Date startDate, final Date endDate, final boolean completed, final int positionInList, final long id) {
         Item it = new Item(listId, category, description, startDate, endDate, completed, positionInList, id);
         Entity itEntity = it.getEntity();
-        return SaveTransactions(itEntity);
+        SaveTransactions(itEntity);
+        return itEntity;
     }
 
-    public boolean saveDoListEntity(final String email, final boolean priv, final String listName, final long id){
+    public Entity saveDoListEntity(final String email, final boolean priv, final String listName, final long id){
         ToDoList tdl = new ToDoList(email, priv, listName, id);
         Entity toDoEntity = tdl.getEntity();
-        return SaveTransactions(toDoEntity);
+        SaveTransactions(toDoEntity);
+        return toDoEntity;
     }
 
     public Entity updateDoListEntity(Entity entity) {
-       // ToDoList tdl = new ToDoList( (String) entity.getProperty(EMAIL),(Boolean) entity.getProperty(PRIVATE),(String) entity.getProperty(LIST_NAME));
+        // ToDoList tdl = new ToDoList( (String) entity.getProperty(EMAIL),(Boolean) entity.getProperty(PRIVATE),(String) entity.getProperty(LIST_NAME));
         Entity ent = getEntityByID(entity, TO_DO_LIST_ENTITY);
         if(ent != null) {
             if (entity.hasProperty(EMAIL)) ent.setProperty(EMAIL, entity.getProperty(EMAIL));
@@ -52,7 +53,7 @@ public class ToDoListServiceImplementation implements ToDoListServiceInterface {
     public Entity updateItemEntity(Entity entity){
         Entity ent = getEntityByID(entity, ITEM_ENTITY);
         if(ent != null) {
-            if (entity.hasProperty(LIST_ID)) ent.setProperty(LIST_ID, entity.getProperty(LIST_ID));
+//            if (entity.hasProperty(LIST_ID)) ent.setProperty(LIST_ID, entity.getProperty(LIST_ID));
             if (entity.hasProperty(CATEGORY)) ent.setProperty(CATEGORY, entity.getProperty(CATEGORY));
             if (entity.hasProperty(DESCRIPTION)) ent.setProperty(DESCRIPTION, entity.getProperty(DESCRIPTION));
             if (entity.hasProperty(START_DATE)) ent.setProperty(START_DATE, entity.getProperty(START_DATE));
@@ -125,25 +126,22 @@ public class ToDoListServiceImplementation implements ToDoListServiceInterface {
     public ArrayList<ToDoList> getViewableToDoListArray(ToDoList tDL) {
         ArrayList<ToDoList> filteredList = new ArrayList<ToDoList>();
         for(ToDoList tdl : getToDoListArrayEntity(tDL)){
-            if(tdl.getEmail().equals(tDL.getEmail())){
-                filteredList.add(tdl);
-            } else if (tdl.getPrivate() == false){
+            if (tdl.getPrivate() == false && !tdl.getEmail().equals(tDL.getEmail())){
                 filteredList.add(tdl);
             }
         }
         return filteredList;
     }
 
-    public ArrayList<Item> getItemByListID(ToDoList tDL) {
-        ArrayList<Item> itemArray = new ArrayList<Item>();
+    public ArrayList<Entity> getItemByListID(Item i) {
+        ArrayList<Entity> itemArray = new ArrayList<Entity>();
         Query query = new Query(ITEM_ENTITY);
         for(Entity entity : datastoreService.prepare(query).asIterable()) {
-            if(((Long)entity.getProperty(LIST_ID)).equals(tDL.getID())){
-                Item model = new Item(entity);
-                itemArray.add(model);
+            if(((Long)entity.getProperty(LIST_ID)).equals(i.getListId())){
+                itemArray.add(entity);
             }
         }
-     //   itemArray.add(new Item());
+        //   itemArray.add(new Item());
         return itemArray;
     }
 

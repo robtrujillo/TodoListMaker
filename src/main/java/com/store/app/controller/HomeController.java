@@ -10,11 +10,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
-
     ToDoListServiceInterface toDoListService;
 
     @Autowired
@@ -48,6 +48,14 @@ public class HomeController {
         return "Home/login";
     }
 
+    /*
+    * Fake Mapping to test controller from AngularJS http request
+    * */
+    @RequestMapping(value = "/getMessages", method = RequestMethod.GET)
+    public @ResponseBody ArrayList<ToDoList> getMessages(@ModelAttribute("TodoList") ToDoList tDL){
+        return toDoListService.getToDoListArrayEntity(tDL);
+    }
+
 
     /*
     * Get all the lists that the owner created
@@ -55,6 +63,14 @@ public class HomeController {
     @RequestMapping(value = "/getMyLists", method = RequestMethod.GET)
     public @ResponseBody ArrayList<ToDoList> getMyLists(@ModelAttribute("TodoList") ToDoList user){
         return toDoListService.getToDoListArrayByEmail(user);
+    }
+
+    /*
+   * Get all the viewable lists
+   * */
+    @RequestMapping(value = "/getViewableLists", method = RequestMethod.GET)
+    public @ResponseBody ArrayList<ToDoList> getViewableLists(@ModelAttribute("TodoList") ToDoList user){
+        return toDoListService.getViewableToDoListArray(user);
     }
 
     /*
@@ -69,44 +85,56 @@ public class HomeController {
     * Get all the items based on the listId
     * */
     @RequestMapping(value = "/getItems", method = RequestMethod.GET)
-    public @ResponseBody ArrayList<Item> getItems(@ModelAttribute("TodoList") ToDoList list){
+    public @ResponseBody ArrayList<Entity> getItemsEntity(@ModelAttribute("TodoList") Item item){
         //int listId = list.();
-        return toDoListService.getItemByListID(list);
+        ArrayList<Entity> ie = toDoListService.getItemByListID(item);
+        return ie;
     }
 
     /*
     *  Add all list
      */
     @RequestMapping(value = "/addAllList", method = RequestMethod.GET)
-    public @ResponseBody boolean addAllList(@ModelAttribute("TodoListModel") ArrayList<ToDoList> listList){
-        return toDoListService.updateAllDoListEntity(listList);
+    public @ResponseBody boolean addAllList(@ModelAttribute("TodoListModel") ArrayList<ToDoList> TDL ){
+        return true;//toDoListService.updateAllDoListEntity(listList);
     }
 
 
 
     /*
-    * Add a new list
+    * Add a new list returns the list that it saved
     * */
     @RequestMapping(value = "/addList", method = RequestMethod.GET)
-    public @ResponseBody boolean addList(@ModelAttribute("TodoListModel") ToDoList list){
-        int x=1;
-        return toDoListService.saveDoListEntity(list.getEmail(), list.getPrivate(), list.getListName(), list.getID());
+    public @ResponseBody ToDoList addList(@ModelAttribute("TodoListModel") ToDoList list){
+        return new ToDoList(toDoListService.saveDoListEntity(list.getEmail(), list.getPrivate(), list.getListName(), list.getID()));
     }
 
     /*
 *  Add all item
  */
-    @RequestMapping(value = "/addAllItem", method = RequestMethod.GET)
-    public @ResponseBody boolean addAllItem(@ModelAttribute("TodoListModel") ArrayList<Item> itemList){
-        return toDoListService.updateAllItemEntity(itemList);
+    @RequestMapping(value = "/addAllItem", method = RequestMethod.POST)
+    public @ResponseBody boolean addAllItem(@RequestBody List<Item> itemList){
+    //    return toDoListService.updateAllItemEntity(itemList);
+        for(Item i : itemList) {
+            addItem(i);
+        }
+        return true;
+    }
+
+    @RequestMapping(value = "/updateAllItem", method = RequestMethod.POST)
+    public @ResponseBody boolean updateAllItem(@RequestBody List<Item> itemList){
+        for(Item i : itemList) {
+            updateItem(i);
+        }
+        return true;
     }
 
 
     /*
-    * Add a new item
+    * Add a new item, returns entity
     * */
     @RequestMapping(value = "/addItem", method = RequestMethod.GET)
-    public @ResponseBody boolean addItem(@ModelAttribute("ItemModel") Item item){
+    public @ResponseBody Entity addItem(@ModelAttribute("ItemModel") Item item){
         return toDoListService.saveItemEntity(item.getListId(),item.getCategory(),item.getDescription(),item.getStartDate(),item.getEndDate(),item.getCompleted(),item.getPositionInList(),item.getID());
     }
 
@@ -115,7 +143,7 @@ public class HomeController {
     * */
     @RequestMapping(value = "/updateList", method = RequestMethod.GET)
     public @ResponseBody Entity updateList(@ModelAttribute("TodoListModel") ToDoList list){
-    //    list = new ToDoList("email", false, "name");
+        //    list = new ToDoList("email", false, "name");
         return toDoListService.updateDoListEntity(list.getEntity());
     }
 
@@ -143,7 +171,15 @@ public class HomeController {
         return toDoListService.deleteItemEntity(item.getEntity()) ;
     }
 
-
-
+    /*
+     Delete all items
+     */
+    @RequestMapping(value = "/deleteItems", method = RequestMethod.POST)
+    public @ResponseBody boolean deleteItems(@RequestBody List<Item> itemList){
+        for(Item i : itemList) {
+            if(i.getID() != 0) deleteItem(i);
+        }
+        return true;
+    }
 
 }
